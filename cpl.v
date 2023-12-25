@@ -40,7 +40,7 @@ Fixpoint checkprop (A : formula) (Γ : context) : bool :=
     | x :: l => if (eqf A x) then true else (checkprop A l)
     end.
 
-Reserved Notation "⊢" (at level 100).
+Reserved Notation "x ⊢ y" (at level 100).
 
 Inductive NP : context -> formula -> Prop :=
 | axiom : forall (Γ : context) (A : formula), (checkprop A Γ = true) -> (Γ ⊢ A)
